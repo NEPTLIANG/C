@@ -1,3 +1,4 @@
+//已知矩形的边长分别为100/200，求该矩形的对角线长度
 #include <stdio.h>
 #include <math.h>
 int main()
