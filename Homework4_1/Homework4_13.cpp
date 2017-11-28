@@ -6,22 +6,22 @@ main()
 {
 	//float ss(float a,float b,float *y);
 	float a , b , y , ss(float a,float b) ;
-	//int *y ;
+	int *y ;
 	//float *z ;
 	puts ("请输入矩形的边长并以空格间隔：") ;  //puts内也要加双引号；puts输出完字符串后会换行
 	scanf ("%f %f" , &a , &b );
-	//*y = &y ;
+	y = &y ;
 	//z = &y ;
-	y = ss(a,b) ;
-	//ss(a,b) ;
+	//y = ss (a,b) ;
+	ss(a,b) ;
 	printf ("该矩形对角线长度为%f\n" , y );
 }
 
 //float ss(float a,float b,float *z)
 float ss(float a,float b)
 {
-	float y ;
-	y = sqrt ( pow(a,2) + pow(b,2) ) ;
-	//*y = sqrt ( pow(a,2) + pow(b,2) ) ;
-	return y;
+	//float y ;
+	//y = sqrt ( pow(a,2) + pow(b,2) ) ;
+	*y = sqrt ( pow(a,2) + pow(b,2) ) ;
+	//return y;
 }
