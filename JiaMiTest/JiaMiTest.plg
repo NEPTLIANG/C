@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: JiaMiTest - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP4E5A.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/JiaMiTest.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\JiaMiTest\JiaMiTest.cpp"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP4E5A.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP4E5B.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/JiaMiTest.pdb" /debug /machine:I386 /out:"Debug/JiaMiTest.exe" /pdbtype:sept 
+.\Debug\JiaMiTest.obj
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP4E5B.tmp"
+<h3>Output Window</h3>
+Compiling...
+JiaMiTest.cpp
+E:\JiaMiTest\JiaMiTest.cpp(19) : warning C4508: 'jiami' : function should return a value; 'void' return type assumed
+E:\JiaMiTest\JiaMiTest.cpp(33) : warning C4508: 'jiemi' : function should return a value; 'void' return type assumed
+E:\JiaMiTest\JiaMiTest.cpp(47) : warning C4508: 'main' : function should return a value; 'void' return type assumed
+E:\JiaMiTest\JiaMiTest.cpp(37) : warning C4101: 'i' : unreferenced local variable
+E:\JiaMiTest\JiaMiTest.cpp(37) : warning C4101: 'j' : unreferenced local variable
+E:\JiaMiTest\JiaMiTest.cpp(11) : warning C4700: local variable 'key' used without having been initialized
+E:\JiaMiTest\JiaMiTest.cpp(26) : warning C4700: local variable 'key' used without having been initialized
+Linking...
+
+
+
+<h3>Results</h3>
+JiaMiTest.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -10,7 +10,7 @@ main()
 	printf ("该三角形面积为%f" , y );
 }
 
-float ss1(float a,float b, float c)
+float ss1(float a,float b,float c)
 {
 	float s , y ;
 	s = (a+b+c) / 2 ;
