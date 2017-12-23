@@ -9,20 +9,21 @@ void jiami(double passwd[],double word[],double *keyy)  //注意在函数之间�
 	for ( i=0 ; i<10 ; i++ )  //别忘了for里用分号
 	{
 		*keyy = *keyy + passwd[i] ;
-		//计算：秘钥=密码（字符串）各字符ASCII码值之和
+		//计算：秘钥=密码（字符数组）各字符ASCII码值之和
 	}
 	//printf ("%f\n" , key );  //改了变量类型别忘了改printf和scanf里的
 	//printf ("%s\n" , word ) ;
 	for ( i=0 ; i<20 ; i++ )
 	{
 		word[i] = word[i] + key ;
-		//加密：文本（字符串）各字符的ASCII码值
+		//加密：原文（字符数组）各字符的ASCII码值加上秘钥值得到密文（字符数组）
 	}
 	printf ("%s\n" , word ) ;
 	printf ("finished\n") ;
 }
 
 void jiemi(double passwd[],double word[],double *keyy)
+//解密函数
 {
 	int i ;
 	double key ;
@@ -31,6 +32,7 @@ void jiemi(double passwd[],double word[],double *keyy)
 	for ( i=0 ; i<20 ; i++ )
 	{
 		word[i] = word[i] - key ;
+		//解密：密文（字符数组）各字符的ASCII值减去秘钥值得到原文（字符数组）
 	}
 	printf ("%s\n" , word ) ;
 	printf ("finished\n") ;
@@ -47,5 +49,7 @@ main()
 	scanf ("%s" , word ) ;
 	//printf ("%s %s\n" , passwd , word );  //printf中也是%s+字符数组名而非字符数组名+[i]
 	jiami(passwd,word,&key) ;
+	//调用加密函数
 	jiemi(passwd,word,&key) ;
+	//调用解密函数
 }
