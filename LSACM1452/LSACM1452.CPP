@@ -2,6 +2,7 @@
 #include <string.h>
 main()
 {
+	/*
 	int i ;
 	char a[5] ;
 	gets(a) ;
@@ -16,4 +17,5 @@ main()
 		printf ( "%c " , a[i] ) ;
 	}
 	printf ( "\n" ) ;
+	*/
 }
