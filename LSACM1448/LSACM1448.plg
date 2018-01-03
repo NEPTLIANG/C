@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: LSACM1448 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP1FB6.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/LSACM1448.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP1FB6.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP1FB7.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/LSACM1448.pdb" /debug /machine:I386 /out:"Debug/LSACM1448.exe" /pdbtype:sept 
+.\Debug\LSACM1448.OBJ
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP1FB7.tmp"
+<h3>Output Window</h3>
+Compiling...
+LSACM1448.CPP
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(7) : warning C4305: '=' : truncation from 'const double' to 'float'
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(8) : warning C4305: '=' : truncation from 'const double' to 'float'
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(9) : warning C4305: '=' : truncation from 'const double' to 'float'
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(10) : warning C4305: '=' : truncation from 'const double' to 'float'
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(11) : warning C4305: '=' : truncation from 'const double' to 'float'
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(14) : warning C4508: 'main' : function should return a value; 'void' return type assumed
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(6) : warning C4700: local variable 's' used without having been initialized
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(6) : warning C4700: local variable 'w' used without having been initialized
+C:\Users\Administrator\Desktop\LSACM1448\LSACM1448.CPP(6) : warning C4700: local variable 'p' used without having been initialized
+Linking...
+
+
+
+<h3>Results</h3>
+LSACM1448.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
