@@ -1,0 +1,4 @@
+﻿  防守练习.c
+c:\users\ming1\git\c\防守练习\防守练习\防守练习.c(7): warning C4013: “time”未定义；假设外部返回 int
+  防守练习.vcxproj -> C:\Users\MING1\Git\C\防守练习\Debug\防守练习.exe
+  防守练习.vcxproj -> C:\Users\MING1\Git\C\防守练习\Debug\防守练习.pdb (Partial PDB)
