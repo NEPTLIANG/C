@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-//字符串处理练习-统计句子里的单词数
-main()
+//字符串处理练习
+
+calc()
+//统计句子里的单词数
 {
 	int y=0 , i , x=0 ;  //别忘了初始化该初始化的值
 	char a[10000] ;
@@ -20,6 +22,61 @@ main()
 		}
 	}
 	printf ( "单词数为%d\n" , y ) ;
+}
 
-	char b[10000] ;
+int sear()
+//查找字符串
+{
+	int i , j , k=-1 , stat=0 ;
+	char sest[10000] ;
+	gets(sest) ;
+	for ( i=0 ; a[i]!='\0' ; i++ )
+	{
+		if ( strcmp(a[i],sest[0]) == 1 )  //别忘了字符串对照要用?函数而非两个等号
+		{
+			for ( j=0 ; sest[j]!='\0' ; j++ )
+			{
+				if ( strcmp(a[i+j],sest[j]) == 1 )
+				{
+					stat = 1 ;
+				}
+				else
+				{
+					//stat = 0 ;
+					break ;  //注意区分break（打破）和brake（刹车）
+				}
+			}
+			/*
+			if ( stat==0 )
+			{
+				puts("没有找到该字符串") ;
+			}
+			*/
+			if ( stat==1 )
+			{
+				k=i ;
+				printf ( "%d" , k ) ;
+			}
+		}
+	}
+	if ( k==-1 )
+	{
+		puts("没有找到该字符串") ;
+	}
+	return 0 ;
+}
+
+main()
+{
+	char choo(100) ;
+	scanf ( "%c" , choo ) ;
+	if ( strcmp(choo,calc) ==1 )
+	{
+		calc() ;
+	}
+	if ( strcmp(choo,sear) == 1 )
+	{
+		choo() ;
+	}
+
 }
