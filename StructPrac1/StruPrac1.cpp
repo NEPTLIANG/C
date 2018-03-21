@@ -24,9 +24,15 @@ main()
 		
 		scanf ("%s" , student[i].name ) ;
 		scanf ("%s" , student[i].num ) ;
+		if ( strlen(student[i].num)!=10 )
+		{
+			printf("第%d位学生的学号输入出错，请检查并重新输入：" , i+1 ) ;
+			i=-1-2+i ;
+		}
 	}
 	printf ("请输入要查找的学生学号：") ; //别忘了分号
 	scanf ("%s" , searnum ) ;
+	printf("%s",searnum);
 	for ( i=0 ; i<3 ; i++ )
 	{
 		a = strcmp(searnum,student[i].num) ;  //注意字符串对比不能直接用双等号，而应用strcmp函数
