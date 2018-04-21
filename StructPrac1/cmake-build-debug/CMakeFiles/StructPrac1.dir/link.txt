@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/StructPrac1.dir/StruPrac1.cpp.o  -o StructPrac1 -rdynamic 
