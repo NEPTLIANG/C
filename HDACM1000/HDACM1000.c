@@ -71,7 +71,7 @@ int main()
     }
     if ( c[30-k] == '1' )
     {
-        k = k+1 ;
+        k += 1 ;
     }
     //printf("%d",k);
     for ( l=30-k+1 ; l<30 ; l++ )
