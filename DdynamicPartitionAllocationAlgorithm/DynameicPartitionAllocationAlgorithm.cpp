@@ -1,30 +1,38 @@
 #include <stdio.h>
 #include <string>
-#define MEMSIZE 32;  //ÄÚ´æ´óĞ¡£¬µ¥Î»£ºMByte
-#define SIZE 1 ;  //²»ÔÙÇĞ¸îµÄÊ£Óà·ÖÇø´óĞ¡
+//#include <string.h>
+//#include <stdbool.h>
+#define MEMSIZE 32 ;  //å†…å­˜å¤§å°ï¼Œå•ä½ï¼šMByte
+#define SIZE 1 ;  //ä¸å†åˆ‡å‰²çš„å‰©ä½™åˆ†åŒºå¤§å°
+//å®å®šä¹‰å¸ƒå°”ç±»å‹ï¼ˆC89æ²¡æœ‰å®šä¹‰å¸ƒå°”ç±»å‹ï¼‰
+//typedef int bool ;
+#define bool int
+#define true 1 ;
+#define false 0 ;
 
-typedef struct FreePartitionChainNode  //¿ÕÏĞ·ÖÇøÁ´½Úµã
+typedef struct FreePartitionChainNode  //ç©ºé—²åˆ†åŒºé“¾èŠ‚ç‚¹
 {
-	fNodep	forward	;  //Ç°ÏòÖ¸Õë
-	fNodep	next	;  //ºóÏòÖ¸Õë
-	bool	status	;  //×´Ì¬Î»
-	int		size	;  //·ÖÇø´óĞ¡
-	int		start	;  //·ÖÇø¿ªÊ¼Î»ÖÃ£¨ĞéÄâµØÖ·£©
-	int		end		;  //·ÖÇø½áÊøÎ»ÖÃ
+	struct FreePartitionChainNode	*forward	;  //å‰å‘æŒ‡é’ˆ
+	struct FreePartitionChainNode 	*next	;  //åå‘æŒ‡é’ˆ
+	bool	status	;  //çŠ¶æ€ä½
+	int		size	;  //åˆ†åŒºå¤§å°
+	int		start	;  //åˆ†åŒºå¼€å§‹ä½ç½®ï¼ˆè™šæ‹Ÿåœ°å€ï¼‰
+	int		end		;  //åˆ†åŒºç»“æŸä½ç½®
 } fNode , *fNodep ;
 
 int main()
 {
-	//´´½¨Á´±í²¢³õÊ¼»¯Í·½áµã
+    //int memoAlloc(string name , int size) ;
+	//åˆ›å»ºé“¾è¡¨å¹¶åˆå§‹åŒ–å¤´ç»“ç‚¹
 	fNodep head=(fNodep)malloc(sizeof(fNode)) , p ;
-	head->forward = null ;
-	head->next = (fNodep)malloc(sizeof(fNode)) ;  //´´½¨³õÊ¼¿Õ¼ä½Úµã
+	head->forward = NULL ;
+	head->next = (fNodep)malloc(sizeof(fNode)) ;  //åˆ›å»ºåˆå§‹ç©ºé—´èŠ‚ç‚¹
 	head->status = 1 ;
 	head->size = 0 ;
-	//³õÊ¼»¯³õÊ¼¿Õ¼ä½Úµã
+	//åˆå§‹åŒ–åˆå§‹ç©ºé—´èŠ‚ç‚¹
 	p = head->next ;
 	p->forward = head ;
-	p->next = null ;
+	p->next = NULL ;
 	p->status = 0 ;
 	p->size = MEMSIZE ;
 	p->start = 0 ;
@@ -33,16 +41,16 @@ int main()
 	return 0 ;
 }
 
-int memoAlloc(string name, int size)  //·ÖÅäÄÚ´æ
+int memoAlloc(string name , int size)  //åˆ†é…å†…å­˜
 {
 	fNodep p=head ;
-	while ( p->next )  //±éÀúÁ´±í
+	while ( p->next )  //éå†é“¾è¡¨
 	{
-		if ( (p->size-size)>SIZE )  //¶àÓà²¿·Ö×ã¹»´ó
+		if ( (p->size-size)>SIZE )  //å¤šä½™éƒ¨åˆ†è¶³å¤Ÿå¤§
 		{
-			//ĞŞ¸Äp½Úµã´óĞ¡¡¢×´Ì¬¡¢ºóÏòÖ¸Õë¡¢½áÊøÎ»ÖÃ
+			//ä¿®æ”¹pèŠ‚ç‚¹å¤§å°ã€çŠ¶æ€ã€åå‘æŒ‡é’ˆã€ç»“æŸä½ç½®
 			p->size = size ;
 			p->status = 1 ;
-			p->next = (fNodep)malloc(sizeof(fNode)) ;  //´´½¨ĞÂ½Úµã×÷ÎªÊ£Óà¿Õ¼ä
+			p->next = (fNodep)malloc(sizeof(fNode)) ;  //åˆ›å»ºæ–°èŠ‚ç‚¹ä½œä¸ºå‰©ä½™ç©ºé—´
 			p->end = p->start + p->size ;
 			p = p->next ;
