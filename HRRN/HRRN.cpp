@@ -59,7 +59,7 @@ int run(progp nextProg , int *timep)
     nextProg->status = true ;
     printf("进程名称    ：%8s\t到达时间：%8d\n"	, nextProg->name , nextProg->arriveTime) ;  //打印下一个被调度进程的进程名、到达时间
     printf("要求服务时间：%8d\t等待时间：%8d\n"	, nextProg->requireTime	, nextProg->waitingTime) ;  //打印下一个被调度进程的要求服务时间、等待时间
-    printf("响应时间（等待时间+要求服务时间）：%8d\n优先级（响应时间/要求服务时间） ：%8lf\n" , (nextProg->waitingTime+nextProg->requireTime) , nextProg->priority)	;  //打印下一个被调度进程的响应时间、执行时的优先级
+    printf("响应时间（等待时间+要求服务时间）：%7d\n优先级（响应时间/要求服务时间） ：%8lf\n" , (nextProg->waitingTime+nextProg->requireTime) , nextProg->priority)	;  //打印下一个被调度进程的响应时间、执行时的优先级
     printf("开始时间    ：%8d\t结束时间：%8d\n\n" , nextProg->startTime , nextProg->endTime) ;  //打印下一个被调度进程的开始时间、结束时间
     *timep += nextProg->requireTime ;
     return 0 ;
