@@ -21,13 +21,13 @@ ming 8*/
 
 typedef struct FreePartitionChainNode  //空闲分区链节点
 {
-	struct FreePartitionChainNode	*forward	;  //前向指针
-	struct FreePartitionChainNode 	*next	;  //后向指针
-	bool	status  ;  //状态位，已分配为1，反之为0
-    char statusDescript[100] ;  //所属进程
-	int		size	;  //分区大小
-	int		start	;  //分区开始位置（虚拟地址）
-	int		end		;  //分区结束位置
+	struct FreePartitionChainNode   *forward	            ;  //前向指针，c语言结构体递归定义要写struct，而且是要写结构体名而不是后面typedef出来的那个
+	struct FreePartitionChainNode   *next	                ;  //后向指针
+	bool	                        status                  ;  //状态位，已分配为1，反之为0
+    char                            statusDescript[100]     ;  //所属进程
+	int		                        size	                ;  //分区大小
+	int		                        start	                ;  //分区开始位置（虚拟地址）
+	int		                        end		                ;  //分区结束位置
 } fNode , *fNodep ;
 
 int main()
@@ -81,7 +81,7 @@ int memoAlloc(char name[100] , int size , fNodep head)  //分配内存
 	while ( p )  //遍历链表
 	{
         //int residue=(p->size)-size ;  //剩余空间
-		if ( (p->size-size)>=SIZE && !p->status )  //若多余部分足够大则划分一块空间分配
+		if ( (p->size-size)>SIZE && !p->status )  //若多余部分足够大则划分一块空间分配
 		{
 			fNodep newNode = (fNodep)malloc(sizeof(fNode)) ;  //给剩余空间创建新节点作为新空闲分区
             //修改指针，将新节点插入链表
@@ -108,6 +108,7 @@ int memoAlloc(char name[100] , int size , fNodep head)  //分配内存
         if ( p->size-size>=0 && !p->status )  //若多余部分不够大则整块空间分配
         {
             p->status = 1 ;
+            strcpy(p->statusDescript , name) ;
             return 0 ;  //分配结束
         }
         p = p->next ;  //若空闲分区不够大则检查下一个分区
